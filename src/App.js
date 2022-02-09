@@ -9,6 +9,33 @@ function App() {
     setXTurn(!XTurn);
   }
 
+  function calculateTheWinner(squaresCopy) {
+    const winningPatterns = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    for (let i = 0; i < winningPatterns.length; i++) {
+      const [a, b, c] = winningPatterns[i];
+      if (
+        squaresCopy[a] &&
+        squaresCopy[b] === squaresCopy[a] &&
+        squaresCopy[c] === squaresCopy[b]
+      ) {
+        console.log("win");
+        return squaresCopy[a];
+      }
+    }
+    console.log("game not finished");
+    return null;
+  }
+
   function onClick(index) {
     // check if the state is null then update `squares` with setSquares to X or O at appropriate index
     if (XTurn === true) {
@@ -16,11 +43,13 @@ function App() {
       squaresCopy[index] = "X";
       setSquares(squaresCopy);
       toggleXTurn();
+      console.log(calculateTheWinner(squaresCopy));
     } else {
       let squaresCopy = [...squares];
       squaresCopy[index] = "O";
       setSquares(squaresCopy);
       toggleXTurn();
+      console.log(calculateTheWinner(squaresCopy));
     }
     // depending on the move that was done before (we'll need some sort of history tracking)
   }
