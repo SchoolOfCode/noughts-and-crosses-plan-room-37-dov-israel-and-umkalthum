@@ -13,8 +13,8 @@ import Square from "./Square";
 function Board({ squares, onClick }) {
   return (
     <div className="grid-container">
-      {squares.map((square) => {
-        return <Square value={square} />;
+      {squares.map((square, index) => {
+        return <Square value={square} key={index} onClick={() => {onClick(index)}}/>;
       })}
     </div>
   );
