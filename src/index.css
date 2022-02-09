@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.grid-container  {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  color: red;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+div > button {
+  margin: 5px;
+}

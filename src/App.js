@@ -3,7 +3,7 @@ import React from "react";
 import Board from "./components/Board";
 
 function App() {
-  const squares = [null, "X", null, "O", null, null, null, null, null];
+  const squares = [null, "X", null, "O", null, null, null, "O", null];
 
   return (
     <div className="App">

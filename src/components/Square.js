@@ -1,10 +1,3 @@
-/*
-- Square
-  - Props
-    - make a move
-  - Render
-    - `"", X, or O`
-*/
 import React from "react";
 
 function Square({ value, onClick }) {
