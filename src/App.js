@@ -3,6 +3,11 @@ import Board from "./components/Board";
 
 function App() {
   const [squares, setSquares] = useState([null, "X", null, "O", null, null, null, "O", null]);
+  const [XTurn, setXTurn] = useState(true);
+
+  function toggleXTurn() {
+    setXTurn(!XTurn);
+  }
 
   function onClick(index) {
     // check if the index is null then update `squares` with setSquares to X or O at appropriate index
